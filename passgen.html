@@ -11,26 +11,30 @@
 
         <label for="password">Password</label>
         <input type="text" id="password">
-        <button>Copy to Clipboard</button>
+        <button id="clipboard">Copy to Clipboard</button>
+        <br>
+
+        <br>
+        <button id="generate">Generate</button>
+        <br>
         
         <br>
         <div class="slidecontainer">
             <h5>Select Password Length</h5>
-            <input type="range" min="1" max="40" value="20" id="slider">
-            <h5>Value</h5>
-            <span id="sliderDisplay">20</span>
+            <input id="slider" type="range" min="1" max="40" step="1" oninput="sliderChange(this.value)">
+
+            <output id="sliderVal">20</output>
         </div>
         <br>
-        <br>
-       
 
+        <br>
         <input type="checkbox" id="upper" checked><label for="upper">Uppercase Letters</label>
         <br>
         <input type="checkbox" id="lower" checked><label for="lower">Lowercase Letters</label>
         <br>
-        <input type="checkbox" id="numbers" checked><label for="numbers">Numbers</label>
+        <input type="checkbox" id="number" checked><label for="numbers">Numbers</label>
         <br>
-        <input type="checkbox" id="symbols" checked><label for="symbols">Symbols</label>
+        <input type="checkbox" id="symbol" checked><label for="symbols">Symbols</label>
         <br>
      
         <script src="passgen.js"></script>
