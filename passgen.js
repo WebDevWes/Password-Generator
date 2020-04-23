@@ -18,7 +18,7 @@ function getRandomNumber() {
 //Random Symbols
 function getRandomSymbol() {
     var symbols = '!@#$%^&*(){}[]=<>/,.\|+_-=`~';
-    return symbols[0];
+    return symbols[Math.floor(Math.random()*symbols.length)];
 }
 
 
