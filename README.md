@@ -8,4 +8,8 @@ Numbers
 Symbols
 Length
 
-![password generator demo](./Assets/screenshot.png)
+Between 8-128 characters, adjusted by the slider.
+
+[Screenshot of Password Generator](/Assets/screenshot.png)
+
+Note: I can't seem to get the text for "all your boxes are unchecked" to display in the msgbox.
