@@ -5,7 +5,7 @@ const randomNum =[48,57];
 const upperCase = [65,90];
 const lowerCase = [97,122];
 const randomSymbol = [33,47];
-let empty = "Please select at least one!"
+let empty = "Please select at least one type of characters!"
 
 // Slider
 function sliderChange(val) {
@@ -31,7 +31,7 @@ document.querySelector("#generate").addEventListener('click', ()=> {
 
   if(upper,lower,numbers,symbols === false){
     console.log(empty)
-    document.getElementById("password").value = empty
+    alert(empty)
   }
 
   if(upper===true){
