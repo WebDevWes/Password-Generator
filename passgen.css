@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(22, 212, 171);
+    width: 500px;
+    margin: auto;
+
+}
+
+h1 {
+    color: blue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: burlywood;
+    padding:20px;
+    text-align: center;
+    font-style: italic;
+}
+
+h5 {
+    font-size: large;
+}
+
+label {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#password {
+    height: 4rem;
+    width: 400px;
+    font-size: 1.5rem;
+}
+
+#checkbox {
+    position: relative;
+    float: right;
+    top: -120px;
+    right: 70px;
+}
+
+#generate {
+    height: 30px;
+    font-weight: bolder;
+    background-color: blue;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#clipboard {
+    position: relative;
+    height: 30px;
+    font-weight: bolder;
+    background-color: blue;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    bottom: 15px;
+}

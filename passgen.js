@@ -1,91 +1,67 @@
-//CharSet- http://net-comber.com/charset.html
+// Variables
 
-// Random Lower Case Letters
-function getRandomLower() {
-    return String.fromCharCode((Math.floor(Math.random()*26)+97));
-}
+const passwordBox = document.querySelector("#password");
+const randomNum =[48,57];
+const upperCase = [65,90];
+const lowerCase = [97,122];
+const randomSymbol = [33,47];
+let empty = "Please select at least one!"
 
-// Random Upper Case Letters
-function getRandomUpper() {
-    return String.fromCharCode((Math.floor(Math.random()*26)+65));
-}
-
-//Random Numbers
-function getRandomNumber() {
-    return String.fromCharCode((Math.floor(Math.random()*10)+48));
-}
-
-//Random Symbols
-function getRandomSymbol() {
-    var symbols = '!@#$%^&*(){}[]=<>/,.\|+_-=`~';
-    return symbols[Math.floor(Math.random()*symbols.length)];
-}
-
+// Slider
 function sliderChange(val) {
     document.getElementById('sliderVal').innerHTML = val;
 }
 
-var randomFunc = {
-    lower: getRandomLower,
-    upper: getRandomUpper,
-    number: getRandomNumber,
-    symbol: getRandomSymbol
-};
+// Clipboard
+clipboard.onclick = function () {
+    passwordBox.select();
+    document.execCommand('Copy')
+}
 
-var password = document.getElementById('password'); //Input Box
-var sliderVal = document.getElementById('sliderVal'); //Value from Slider
-var upper = document.getElementById('upper'); //Uppercase Letter Checkbox
-var lower = document.getElementById('lower'); //Lowercase Letter Checkbox
-var number = document.getElementById('number'); //Number Checkbox
-var symbol = document.getElementById('symbol'); //Symbol Checkbox
-var generate = document.getElementById('generate'); //Generate Button
-var clipboard = document.getElementById('clipboard'); //Copy to Clipboard Button
+// Event listener for the generate button
+document.querySelector("#generate").addEventListener('click', ()=> {
+  const length = document.querySelector("#sliderVal").value;
+  const upper = document.querySelector("#upper").checked;
+  const lower = document.querySelector("#lower").checked;
+  const numbers = document.querySelector("#number").checked;
+  const symbols = document.querySelector("#symbol").checked;
+  
+  const ranSelector = [];
+  const password = [];
 
-//On Click
-generate.addEventListener('click', () => {
-    var length = +sliderVal.Value;
-    var truUpper = upper.checked;
-    var truLower = lower.checked;
-    var truNumber = number.checked;
-    var truSymbol = symbol.checked;
+  if(upper,lower,numbers,symbols === false){
+    console.log(empty)
+    document.getElementById("password").value = empty
+  }
 
-    password.innerText= generatePassword(
-        truUpper, 
-        truLower,
-        truNumber,
-        truSymbol, 
-        length
-    );
-});
-
-//Password Generator Script
-function generatePassword(truUpper,truLower,truNumber,truSymbol,length) {
-    var generatedPassword = '';
-    var typesCount = truUpper+truLower+truNumber+truSymbol;
-
-    console.log('typesCount: ', typesCount);
-
-    var Array = [{truUpper},{truLower},{truNumber},{truSymbol}].filter
-    (
-        item => Object.values(item)[0]
-    );
-    
-    console.log('Array: ', Array);
-
-    if(typesCount === 0){
-        return 'Please select password specifications';
+  if(upper===true){
+    for(let i=upperCase[0]; i<= upperCase[1]; i++){
+      ranSelector.push(i);
     }
-
-    for(i=0; i<length; i+= typesCount){
-        Array.forEach(type => {
-            var funcName = Object.keys(type)[0];
-            console.log('funcName: ', funcName);
-           
-            generatedPassword += randomFunc[funcName]();
-        });
+  }
+  if(numbers===true){
+    for(let i=randomNum[0]; i<= randomNum[1]; i++){
+      ranSelector.push(i);
     }
+  }
+  if(symbols===true){
+    for(let i=randomSymbol[0]; i<= randomSymbol[1]; i++){
+      ranSelector.push(i);
+    }
+  }
+  if(lower===true){
+    for(let i=lowerCase[0]; i<= lowerCase[1]; i++){
+      ranSelector.push(i);
+    }
+  }
+  
+  // Generate and push password to input box
+  for(let i = 0; i< length; i++){
+    password.push(String.fromCharCode(ranSelector[Math.floor(Math.random()*ranSelector.length)]))
+  }
+  let generated = password.textContent = password.join("");
+  //console.log(generated)
 
-    console.log(generatedPassword);
+  passwordBox.value = generated
 
-
-};
+})

@@ -10,33 +10,33 @@
         <h1>Password Generator</h1>
 
         <label for="password">Password</label>
-        <input type="text" id="password">
-        <button id="clipboard">Copy to Clipboard</button>
+        <textarea type="text" id="password">Your password will be here</textarea>
+        <button id="clipboard">Copy</button>
         <br>
 
         <br>
-        <button id="generate">Generate</button>
+        <button id="generate">Generate Password</button>
         <br>
         
-        <br>
+
         <div class="slidecontainer">
             <h5>Select Password Length</h5>
-            <input id="slider" type="range" min="1" max="40" step="1" oninput="sliderChange(this.value)">
+            <input id="slider" type="range" min="8" max="128" step="1" oninput="sliderChange(this.value)">
 
-            <output id="sliderVal">20</output>
+            <output id="sliderVal">10</output>
         </div>
-        <br>
 
-        <br>
+
+        <div id="checkbox">
         <input type="checkbox" id="upper" checked><label for="upper">Uppercase Letters</label>
         <br>
         <input type="checkbox" id="lower" checked><label for="lower">Lowercase Letters</label>
         <br>
-        <input type="checkbox" id="number" checked><label for="numbers">Numbers</label>
+        <input type="checkbox" id="number" checked><label for="number">Numbers</label>
         <br>
-        <input type="checkbox" id="symbol" checked><label for="symbols">Symbols</label>
-        <br>
+        <input type="checkbox" id="symbol" checked><label for="symbol">Symbols</label>
+        </div>
      
-        <script src="passgen.js"></script>
+        <script src="passgen.js"> </script>
     </body>
 </html>
