@@ -29,7 +29,7 @@ document.querySelector("#generate").addEventListener('click', ()=> {
   const ranSelector = [];
   const password = [];
 
-  if(upper,lower,numbers,symbols === false){
+  if(upper==false && lower==false && numbers==false && symbols==false){
     console.log(empty)
     alert(empty)
   }
