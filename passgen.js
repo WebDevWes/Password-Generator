@@ -63,15 +63,13 @@ document.querySelector("#generate").addEventListener('click', function generateP
   if(symbols===true){
     let regex = /[^\w\s]/g;
     let found = generated.match(regex);
-      if(found===null){
-        generatePass()
+      if(found===null || 0){
+        console.log("No Symbols Found");
+        generatePass();
+      } else {
+        passwordBox.value = generated;
       }
-     console.log(found);
-    // console.log(generated);
   }
   //console.log(generated)
-  //"!\#$%&'()*+,-./"
-
-  passwordBox.value = generated
-
+  //passwordBox.value = generated;
 })
