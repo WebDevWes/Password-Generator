@@ -19,7 +19,7 @@ clipboard.onclick = function () {
 }
 
 // Event listener for the generate button
-document.querySelector("#generate").addEventListener('click', ()=> {
+document.querySelector("#generate").addEventListener('click', function generatePass() {
   const length = document.querySelector("#sliderVal").value;
   const upper = document.querySelector("#upper").checked;
   const lower = document.querySelector("#lower").checked;
@@ -60,7 +60,17 @@ document.querySelector("#generate").addEventListener('click', ()=> {
     password.push(String.fromCharCode(ranSelector[Math.floor(Math.random()*ranSelector.length)]))
   }
   let generated = password.textContent = password.join("");
+  if(symbols===true){
+    let regex = /[^\w\s]/g;
+    let found = generated.match(regex);
+      if(found===null){
+        generatePass()
+      }
+     console.log(found);
+    // console.log(generated);
+  }
   //console.log(generated)
+  //"!\#$%&'()*+,-./"
 
   passwordBox.value = generated
 
