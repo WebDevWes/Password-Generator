@@ -22,7 +22,7 @@ clipboard.onclick = function () {
 document.querySelector("#generate").addEventListener('click', generatePass)
 
 function generatePass() {
-  console.log("generate")
+  //console.log("generate")
   const passLength = document.querySelector("#sliderVal").value;
   const upper = document.querySelector("#upper").checked;
   const lower = document.querySelector("#lower").checked;
@@ -59,15 +59,15 @@ function generatePass() {
   }
   //console.log(ranSelector)
   // Generate and push password to input box
-  console.log("before the if: ", passLength)
+  //console.log("before the if: ", passLength)
   for (let i = 0; i < passLength; i++) {
-    console.log("password: ", password)
+    //console.log("password: ", password)
     password.push(String.fromCharCode(ranSelector[Math.floor(Math.random() * ranSelector.length)]))
   }
-  console.log("password after: ", password)
-  //let generated = password.textContent = password.join("");
+  //console.log("password after: ", password)
+  //let generated = password.textContent = password.join(""); - Problem was here, recursion took password.textContent again and again 
   let generated = password.join("");
-  console.log("generated: ", generated)
+  //console.log("generated: ", generated)
   passwordBox.value = generated;
   // Utilizing .match to ensure password contains the characters selected
   if (symbols === true) {
