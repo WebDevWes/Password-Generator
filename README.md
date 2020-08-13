@@ -1,5 +1,5 @@
 
-# Github pages link : https://wesaboo.github.io/Password-Generator/
+### Github pages link : https://wesaboo.github.io/Password-Generator/
 
 ### Github Username: Wesaboo
 
