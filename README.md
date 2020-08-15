@@ -11,11 +11,11 @@ Github Email Address: wesaboo@gmail.com
 
 Can generate password based on selection choice of
 
--Uppercase Letters
--Lowercase Letter
--Numbers
--Symbols
--Length
+- Uppercase Letters
+- Lowercase Letter
+- Numbers
+- Symbols
+- Length
 
 Between 8-128 characters, adjusted by the slider.
 
