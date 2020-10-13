@@ -1,11 +1,11 @@
 
-### Github pages link : https://wesaboo.github.io/Password-Generator/
+### Github pages link : https://webdevwes.github.io/Password-Generator/
 
 # Password Generator
 
-### Github Username: Wesaboo
+### Github Username: WebDevWes
 
-Github Email Address: wesaboo@gmail.com
+Github Email Address: webdevwes89@gmail.com
 
 ## Project/Repo Title: Password Generator
 
