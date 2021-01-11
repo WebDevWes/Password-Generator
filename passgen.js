@@ -1,28 +1,27 @@
 // Variables
-
+// range of numbers for Character code
 const passwordBox = document.querySelector("#password");
 const randomSymbol = [33, 47];
 const randomNum = [48, 57];
 const upperCase = [65, 90];
 const lowerCase = [97, 122];
-let empty = "Please select at least one type of characters!"
+let empty = "Please select at least one type of characters!";
 
 // Slider
 function sliderChange(val) {
-  document.getElementById('sliderVal').innerHTML = val;
+  document.getElementById("sliderVal").innerHTML = val;
 }
 
 // Clipboard
 clipboard.onclick = function () {
   passwordBox.select();
-  document.execCommand('Copy')
-}
+  document.execCommand("Copy");
+};
 
 // Event listener for the generate button
-document.querySelector("#generate").addEventListener('click', generatePass)
+document.querySelector("#generate").addEventListener("click", generatePass);
 
 function generatePass() {
-  //console.log("generate")
   const passLength = document.querySelector("#sliderVal").value;
   const upper = document.querySelector("#upper").checked;
   const lower = document.querySelector("#lower").checked;
@@ -32,9 +31,13 @@ function generatePass() {
   const ranSelector = [];
   const password = [];
 
-  if (upper === false && lower === false && numbers === false && symbols === false) {
-    //console.log(empty)
-    alert(empty)
+  if (
+    upper === false &&
+    lower === false &&
+    numbers === false &&
+    symbols === false
+  ) {
+    alert(empty);
   }
 
   if (symbols === true) {
@@ -57,17 +60,20 @@ function generatePass() {
       ranSelector.push(i);
     }
   }
-  //console.log(ranSelector)
+
   // Generate and push password to input box
-  //console.log("before the if: ", passLength)
+
   for (let i = 0; i < passLength; i++) {
-    //console.log("password: ", password)
-    password.push(String.fromCharCode(ranSelector[Math.floor(Math.random() * ranSelector.length)]))
+    password.push(
+      String.fromCharCode(
+        ranSelector[Math.floor(Math.random() * ranSelector.length)]
+      )
+    );
   }
-  //console.log("password after: ", password)
-  //let generated = password.textContent = password.join(""); - Problem was here, recursion took password.textContent again and again 
+
+  //let generated = password.textContent = password.join(""); - Problem was here, recursion took password.textContent again and again
   let generated = password.join("");
-  //console.log("generated: ", generated)
+
   passwordBox.value = generated;
   // Utilizing .match to ensure password contains the characters selected
   if (symbols === true) {
@@ -86,7 +92,4 @@ function generatePass() {
       generatePass();
     }
   }
-
-  //console.log(generated)
-  //passwordBox.value = generated;
 }
